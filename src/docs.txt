@@ -1,0 +1,121 @@
+
+    autoEnableAlert(savedSearchName, disableDuration)
+        Enables an alert after the specified time.
+        Parameters:
+                savedSearchName (required) = the name of the saved search
+                disableDuration (required) = How long to disable the alert (in minutes)
+    
+    autoReconnect(urlPrefix, username, password)
+    
+    connect(urlPrefix, username, password)
+        Creates a connection with a Splunk enterprise instance and 
+        sets a global session key to be used in subsequent requests.
+        Parameters:
+                urlPrefix (required) = the base URL for all requests (i.e. https://host:port)
+                username (required) = Splunk username
+                password (required) = Splunk password
+    
+    deletePdfFile(filePath)
+        Deletes the dashboard PDF file saved in the local directory
+        Parameters:
+                filePath (required) = the path to the file to be deleted (TIP: pass in the output of one of the PDF rendering methods)
+    
+    disableAlert(savedSearchName, disableDuration=0)
+        Disables an alert.
+        Parameters:
+                savedSearchName (required) = the name of the saved search
+                disableDuration (optional) = How long to disable the alert (in minutes). If not set, the alert must be enabled manually
+    
+    enableAlert(savedSearchName)
+        Enables an alert.
+        Parameters:
+                savedSearchName (required) = the name of the saved search
+    
+    formatDashboardInput(namespace, dashboard, userInput)
+        Modifies the dashboard XML with the user input and returns the modified XML.
+        Parameters:
+                namespace (required) = the name of the app where the dashboard is located
+                dashboard (required) = the dashboard name
+                userInput (required) = user input with token values. Must be in the form [{'token':'TOKEN_NAME','values':{'property1':'value1','property2':'value2'}}]
+    
+    getDashboardPdf(namespace, dashboard, *userInput)
+        Gets a PDF rendering of a dashboard and saves it to '/pdf_files/<namespace>_<dashboard>.pdf'
+        Parameters:
+                namespace (required) = the name of the app where the dashboard is located
+                dashboard (required) = the dashboard name
+                userInput (optional) = user input with token values. Must be in the form [{'token':'TOKEN_NAME','values':{'property1':'value1','property2':'value2'}}]
+    
+    getDashboardXML(namespace, dashboard)
+        Gets the specified dashboard XML.
+        Parameters:
+                namespace (required) = the name of the app where the dashboard is located
+                dashboard (required) = the dashboard name
+    
+    getReportPdf(report)
+        Gets a PDF rendering of a report/saved search and saves it to '/pdf_files/<report>.pdf'.
+        Uses the original time range of the report
+        Parameters:
+                report (required) = the name of the report
+    
+    getSearchPdf(searchString)
+        Gets a PDF rendering of an ad hoc search and saves it to '/pdf_files/search.pdf'.
+        NOTE: this method can only return the default visualization
+        Parameters:
+                searchString (required) = the ad hoc search string in the Splunk Search Processing Language (SPL)
+    
+    getSearchResults(sid)
+        Retrieves the results of a previously run search. Returns results in JSON form.
+        Parameters:
+                sid (required) = search ID
+    
+    getSearchStatus(sid)
+        Repeatedly retrieves the status of a search until the search completes or it times out.
+        Parameters:
+                sid (required) = search ID
+    
+    listAppNames(*searchString)
+        Lists the app names for all apps in the current Splunk instance
+        Parameters:
+                searchString (optional) = filters results. searchString is NOT case sensitive
+    
+    listDashboardInputs(namespace, dashboard)
+        Lists the dashboard tokens available to the specified dashboard. Returns results in JSON form.
+        Parameters:
+                namespace (required) = the name of the app where the dashboard is located
+                dashboard (required) = the dashboard name
+    
+    listDashboardNames(namespace, *searchString)
+        Lists the names of dashboards in the specified app. Returns results in JSON form.
+        Parameters:
+                namespace (required) = the app name
+                searchString (optional) = filters results. searchString is NOT case sensitive
+    
+    listDisabledAlerts(*searchString)
+        Lists the names of disabled alerts. Returns results in JSON form.
+        Parameters:
+                searchString (optional) = filters results. searchString is NOT case sensitive
+    
+    listSavedSearches(*searchString)
+        Lists the names of saved searches (reports & alerts). Returns results in JSON form.
+        Parameters:
+                searchString (optional) = filters results. searchString is NOT case sensitive
+    
+    rescheduleAlert(savedSearchName, cronSchedule)
+        Reschedules an alert by passing in a cron schedule.
+        Parameters:
+                savedSearchName (required) = the name of the saved search
+                cronSchedule (required) = a cron schedule (i.e. to run at 30 minutes past each hour '30 * * * *')
+    
+    runSavedSearch(savedSearchName, triggerActions=False)
+        Runs a saved search. Returns results in JSON form.
+        Run 'listSavedSearches' to get the correct name.
+        Parameters:
+                savedSearchName (required) = the name of the saved Splunk search
+                triggerActions (optional) = specify whether to trigger alert actions (Boolean)
+    
+    runSearch(searchString)
+        Accepts ad hoc search strings. Returns results in JSON form.
+        Parameters:
+                searchString (required) = the ad hoc search string in the Splunk Search Processing Language (SPL)
+    
+    
