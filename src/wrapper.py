@@ -10,6 +10,12 @@ def listSavedSearches(params):
 	else:
 		return splunk.listSavedSearches()
 		
+def listReportNames(params):
+	if len(params) > 0:
+		return splunk.listReportNames(params[0])
+	else:
+		return splunk.listReportNames()
+		
 def runSavedSearch(params):
 	return splunk.runSavedSearch(params[0])
 	
@@ -39,6 +45,12 @@ def getReportPdf(params):
 def getSearchPdf(params):
 	return splunk.getSearchPdf(params[0])
 
+	
+def listAlertNames(params):
+	if len(params) > 0:
+		return splunk.listAlertNames(params[0])
+	else:
+		return splunk.listAlertNames()
 
 def disableAlert(params):
 	if len(params) == 2:
