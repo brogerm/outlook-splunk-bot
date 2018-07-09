@@ -26,8 +26,8 @@ Private Sub inboxItems_ItemAdd(ByVal Item As Object)
     'Set initial value
     requestIsValid = False
     'Define the list of valid commands
-    validCommands = Array("list saved searches", "run search", "run saved search", "get dashboard pdf", "list dashboard names", _
-                        "list dashboard inputs", "get report pdf", "get search pdf", "disable alert", "enable alert", _
+    validCommands = Array("list saved searches", "list report names", "run search", "run saved search", "get dashboard pdf", "list dashboard names", _
+                        "list dashboard inputs", "get report pdf", "get search pdf", "list alert names", "disable alert", "enable alert", _
                         "list disabled alerts", "reschedule alert", "list app names", "splunkbot")
     'Get the email address of the sender
     requesterEmailAddress = senderEmailAddress(Item)
@@ -126,7 +126,7 @@ Sub DeleteFile(ByVal FileToDelete As String)
     Kill FileToDelete
 End Sub
 
-'Check whether the sender is authorized based off of a contact group
+'Check whether the sender is authorized
 Function isUserAuthorized(sender)
     'MsgBox (sender)
     Dim objOutlook
