@@ -43,4 +43,6 @@ def generateDocs():
 	file = open('docs.txt','w')
 	file.write(documentation)
 	file.close()
+	
+generateDocs()
 

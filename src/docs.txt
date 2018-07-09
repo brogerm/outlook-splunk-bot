@@ -73,6 +73,11 @@
         Parameters:
                 sid (required) = search ID
     
+    listAlertNames(*searchString)
+        Lists the names of alerts. Returns results in JSON form.
+        Parameters:
+                searchString (optional) = filters results. searchString is NOT case sensitive
+    
     listAppNames(*searchString)
         Lists the app names for all apps in the current Splunk instance
         Parameters:
@@ -92,6 +97,11 @@
     
     listDisabledAlerts(*searchString)
         Lists the names of disabled alerts. Returns results in JSON form.
+        Parameters:
+                searchString (optional) = filters results. searchString is NOT case sensitive
+    
+    listReportNames(*searchString)
+        Lists the names of reports. Returns results in JSON form.
         Parameters:
                 searchString (optional) = filters results. searchString is NOT case sensitive
     
