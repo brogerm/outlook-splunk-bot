@@ -44,5 +44,5 @@ def generateDocs():
 	file.write(documentation)
 	file.close()
 	
-generateDocs()
+#generateDocs()
 
