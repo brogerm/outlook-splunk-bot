@@ -23,10 +23,12 @@ A bot triggered by an Outlook email that runs Splunk searches and replies to the
    > SPLUNK_PASSWORD
 2. Edit /src/app.py with the base url of your splunk instance. For example:
    > baseurl = 'https://localhost:8089'
-3. Open Windows Command Prompt (as administrator) and navigate to where this project is located
-4. Navigate to the src directory and run the following to start the local server that the VBA script will call
+   
+# Running
+1. Make sure Outlook is running then open Windows Command Prompt (as administrator) and navigate to where this project is located
+2. Navigate to the src directory and run the following to start the local server that the VBA script will call
 ```
    python app.py
 ```
-5. Ask someone in your "Splunk Bot Authorized Users" to send you an email with "splunkbot" as the subject line
-6. Confirm the reply email was sent
+3. Ask someone in your "Splunk Bot Authorized Users" to send you an email with "splunkbot" as the subject line
+4. Confirm the reply email was sent
