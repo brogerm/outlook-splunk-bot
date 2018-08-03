@@ -12,19 +12,19 @@ A bot triggered by an Outlook email that runs Splunk searches and replies to the
    7. select "Macro Security" and select "Notifications for all macros", then press "OK"
 2. Open the macros editor (in the developer tab click on "Visual Basic")
 3. You should see a file structure similar to the following
-    Project1(VbaProject.OTM)/MicrosoftOutlookObject/ThisOutlookSession
+   > Project1(VbaProject.OTM)/MicrosoftOutlookObject/ThisOutlookSession
 4. Open "ThisOutlookSession" and paste in the vba script found in this project "/src/outlookScript.vb"
 5. In Microsoft Outlook create a contacts group named "Splunk Bot Authorized Users"
 6. Set the following environment variables with their respective values
-> SPLUNK_USERNAME
+   > SPLUNK_USERNAME
 
-> SPLUNK_PASSWORD
+   > SPLUNK_PASSWORD
 7. Edit /src/app.py with the base url of your splunk instance. For example:
-> baseurl = 'https://localhost:8089'
+   > baseurl = 'https://localhost:8089'
 8. Open Windows Command Prompt (as administrator) and navigate to where this project is located
 9. Navigate to the src directory and run the following to start the local server that the VBA script will call
 ```
-python app.py
+   python app.py
 ```
 10. Ask someone in your "Splunk Bot Authorized Users" to send you an email with "splunkbot" as the subject line
 11. Confirm the reply email was sent
