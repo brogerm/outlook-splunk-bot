@@ -1,4 +1,4 @@
-# outlook-splunk-bot
+# Overview
 A bot triggered by an Outlook email that runs Splunk searches and replies to the sender with the results
 
 # Outlook Setup
