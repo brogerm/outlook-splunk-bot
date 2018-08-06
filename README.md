@@ -16,6 +16,7 @@ A bot triggered by an Outlook email that runs Splunk searches and replies to the
 4. Open "ThisOutlookSession" and paste in the vba script found in this project "/src/outlookScript.vb"
 5. Press the save button
 6. In Microsoft Outlook create a contacts group named "Splunk Bot Authorized Users"
+7. Close and reopen Microsoft Outlook
 
 # System Setup
 1. Set the following environment variables with their respective values
